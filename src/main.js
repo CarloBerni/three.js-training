@@ -5,5 +5,21 @@ var renderer =new ThreeWebGLRenderer( );
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
+var update = function( ) {
+
+};
+
+var render = function( ) {
+  renderer.render( scene, camera );
+};
+
+var GameLoop = function( ){
+  requestAnimationFrame( GameLoop );
+
+  update( );
+  render( );
+};
+
+GameLoop( );
 
 
