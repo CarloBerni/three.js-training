@@ -20,6 +20,6 @@ var GameLoop = function( ){
   render( );
 };
 
-GameLoop( );
+GameLoop( )
 
 
