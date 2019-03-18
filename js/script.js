@@ -18,8 +18,7 @@ window.addEventListener( 'resize', function ( ) {
 var geometry = new THREE.BoxGeometry(1, 1, 2);
 
 var material = new THREE.MeshBasicMaterial({
-  color: 0xFFFFF3F,
-  wireframe: true
+  color: 0xFFFFF3F
 });
 var cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
