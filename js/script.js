@@ -15,10 +15,10 @@ window.addEventListener( 'resize', function ( ) {
 
 
 //
-var geometry = new THREE.BoxGeometry(1, 1, 1);
+var geometry = new THREE.BoxGeometry(1, 1, 2);
 
 var material = new THREE.MeshBasicMaterial({
-  color: 0xFFFFFF,
+  color: 0xFFFFF3F,
   wireframe: true
 });
 var cube = new THREE.Mesh(geometry, material);
@@ -28,10 +28,8 @@ camera.position.z = 3;
 
 
 
-
-
 var update = function () {
-  cube.rotation.x += 0.01;
+  cube.rotation.x += 0.03;
   cube.rotation.y += 0.005;
 };
 
