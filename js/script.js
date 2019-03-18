@@ -48,5 +48,3 @@ var GameLoop = function () {
 
 GameLoop();
 
-
-console.log( "hello" );
