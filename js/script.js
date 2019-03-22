@@ -3,7 +3,7 @@ var scene = new THREE.Scene();
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
-    camera.position.set(0,0,15);
+    camera.position.set(0,0,20);
 
 // light
 
@@ -35,8 +35,6 @@ var texture = new THREE.TextureLoader().load( "/textures/2_no_clouds_4k.jpg" );
 var earthMaterial = new THREE.MeshBasicMaterial({
   map: texture,
   color: 0xaaaaaa,
-  specular: 0x333333,
-  shininess: 25
 });
 // create clouds geometry and material
 
@@ -45,7 +43,7 @@ var texture = new THREE.TextureLoader().load( "/textures/fair_clouds_4k.png" );
 var cloudMaterial = new THREE.MeshBasicMaterial({
   transparent: true,
   map: texture,
-  opacity: 0.8
+  opacity: 0.7
 });
 
 // creat Bumps material and geometry
@@ -65,7 +63,6 @@ var texture = new THREE.TextureLoader().load( "/textures/2048x1024.png" );
 var starMaterial = new THREE.MeshBasicMaterial({
   map: texture,
   side: THREE.DoubleSide,
-  shininess: 0
 });
 
 // final
@@ -79,6 +76,7 @@ scene.add(clouds);
 var bump = new THREE.Mesh(bumpGeometry, bumpMaterial, texture);
 scene.add(bump);
 
+// orbit
 
 
 var render = function() {
