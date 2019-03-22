@@ -77,6 +77,8 @@ var bump = new THREE.Mesh(bumpGeometry, bumpMaterial, texture);
 scene.add(bump);
 
 // orbit
+var orbit = new THREE.OrbitControls( camera, renderer.domElement );
+
 
 
 var render = function() {
