@@ -31,24 +31,29 @@ window.addEventListener( 'resize', function ( ) {
 // create earths geometry and material
 
 var earthGeometry = new THREE.SphereGeometry( 5, 50, 50);
-var earthMaterial = new THREE.MeshPhongMaterial({
+var texture = new THREE.TextureLoader().load( "/textures/2_no_clouds_4k.jpg" );
+var earthMaterial = new THREE.MeshBasicMaterial({
+  map: texture,
   color: 0xaaaaaa,
   specular: 0x333333,
   shininess: 25
 });
-
 // create clouds geometry and material
 
 var cloudGeometry = new THREE.SphereGeometry( 5.05, 50, 50);
-var cloudMaterial = new THREE.MeshPhongMaterial({
+var texture = new THREE.TextureLoader().load( "/textures/fair_clouds_4k.png" );
+var cloudMaterial = new THREE.MeshBasicMaterial({
   transparent: true,
+  map: texture,
   opacity: 0.8
 });
 
 // creat Bumps material and geometry
 
 var bumpGeometry = new THREE.SphereGeometry( 5, 50, 50);
-var bumpMaterial = new THREE.MeshPhongMaterial({
+var texture = new THREE.TextureLoader().load( "/textures/elev_bump_4k.jpg" );
+var bumpMaterial = new THREE.MeshBasicMaterial({
+  map: texture,
   transparent: true,
   opacity: 0.2
 });
@@ -56,21 +61,25 @@ var bumpMaterial = new THREE.MeshPhongMaterial({
 // creat stars geometry and material
 
 var starGeometry = new THREE.SphereGeometry( 200, 50, 50);
-var starMaterial = new THREE.MeshPhongMaterial({
+var texture = new THREE.TextureLoader().load( "/textures/2048x1024.png" );
+var starMaterial = new THREE.MeshBasicMaterial({
+  map: texture,
   side: THREE.DoubleSide,
   shininess: 0
 });
 
 // final
 
-var star = new THREE.Mesh(starGeometry, starMaterial);
+var star = new THREE.Mesh(starGeometry, starMaterial, texture);
 scene.add(star);
-var earth = new THREE.Mesh(earthGeometry, earthMaterial);
+var earth = new THREE.Mesh(earthGeometry, earthMaterial, texture);
 scene.add(earth);
-var clouds = new THREE.Mesh(cloudGeometry, cloudMaterial);
+var clouds = new THREE.Mesh(cloudGeometry, cloudMaterial, texture);
 scene.add(clouds);
-var bump = new THREE.Mesh(bumpGeometry, bumpMaterial);
+var bump = new THREE.Mesh(bumpGeometry, bumpMaterial, texture);
 scene.add(bump);
+
+
 
 var render = function() {
   earth.rotation.y += .0015;
