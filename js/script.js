@@ -31,7 +31,7 @@ window.addEventListener( 'resize', function ( ) {
 // create earths geometry and material
 
 var earthGeometry = new THREE.SphereGeometry( 5, 50, 50);
-var texture = new THREE.TextureLoader().load( "/textures/2_no_clouds_4k.jpg" );
+var texture = new THREE.TextureLoader().load( "/textures/2_no_clouds_4k-min.jpg" );
 var earthMaterial = new THREE.MeshBasicMaterial({
   map: texture,
   color: 0xaaaaaa,
@@ -39,7 +39,7 @@ var earthMaterial = new THREE.MeshBasicMaterial({
 // create clouds geometry and material
 
 var cloudGeometry = new THREE.SphereGeometry( 5.05, 50, 50);
-var texture = new THREE.TextureLoader().load( "/textures/fair_clouds_4k.png" );
+var texture = new THREE.TextureLoader().load( "/textures/fair_clouds_4k-min.png" );
 var cloudMaterial = new THREE.MeshBasicMaterial({
   transparent: true,
   map: texture,
@@ -49,7 +49,7 @@ var cloudMaterial = new THREE.MeshBasicMaterial({
 // creat Bumps material and geometry
 
 var bumpGeometry = new THREE.SphereGeometry( 5, 50, 50);
-var texture = new THREE.TextureLoader().load( "/textures/elev_bump_4k.jpg" );
+var texture = new THREE.TextureLoader().load( "/textures/elev_bump_4k-min.jpg" );
 var bumpMaterial = new THREE.MeshBasicMaterial({
   map: texture,
   transparent: true,
@@ -59,7 +59,7 @@ var bumpMaterial = new THREE.MeshBasicMaterial({
 // creat stars geometry and material
 
 var starGeometry = new THREE.SphereGeometry( 200, 50, 50);
-var texture = new THREE.TextureLoader().load( "/textures/2048x1024.png" );
+var texture = new THREE.TextureLoader().load( "/textures/2048x1024-min.png" );
 var starMaterial = new THREE.MeshBasicMaterial({
   map: texture,
   side: THREE.DoubleSide,
