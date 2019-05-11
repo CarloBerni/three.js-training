@@ -31,7 +31,7 @@ window.addEventListener( 'resize', function ( ) {
 // create earths geometry and material
 
 var earthGeometry = new THREE.SphereGeometry( 5, 50, 50);
-var texture = new THREE.TextureLoader().load( "/textures/2_no_clouds_4k-min.jpg" );
+var texture = new THREE.TextureLoader().load( "/textures/Mars_Viking_MDIM21_ClrMosaic_global_2500m.png" );
 var earthMaterial = new THREE.MeshBasicMaterial({
   map: texture,
   color: 0xaaaaaa,
