@@ -12,9 +12,9 @@ scene.add(light);
 
 //light direction
 
-var light = new THREE.DirectionalLight( 0xfdfcf0, 1 );
-light.position.set( 20, 10, 20);
-scene.add(light);
+dirLight = new THREE.DirectionalLight( 0xffffff );
+				dirLight.position.set( - 1, 0, 1 ).normalize();
+				scene.add( dirLight );
 
 
 
@@ -28,32 +28,12 @@ window.addEventListener( 'resize', function ( ) {
 });
 
 
-// create earths geometry and material
+// create mars geometry and material
 
-var earthGeometry = new THREE.SphereGeometry( 5, 50, 50);
+var marsGeometry = new THREE.SphereGeometry( 5, 50, 50);
 var texture = new THREE.TextureLoader().load( "/textures/Mars_Viking_MDIM21_ClrMosaic_global_2500m.png" );
-var earthMaterial = new THREE.MeshBasicMaterial({
+var marsMaterial = new THREE.MeshBasicMaterial({
   map: texture,
-  color: 0xaaaaaa,
-});
-// create clouds geometry and material
-
-var cloudGeometry = new THREE.SphereGeometry( 5.05, 50, 50);
-var texture = new THREE.TextureLoader().load( "/textures/fair_clouds_4k-min.png" );
-var cloudMaterial = new THREE.MeshBasicMaterial({
-  transparent: true,
-  map: texture,
-  opacity: 0.7
-});
-
-// creat Bumps material and geometry
-
-var bumpGeometry = new THREE.SphereGeometry( 5, 50, 50);
-var texture = new THREE.TextureLoader().load( "/textures/elev_bump_4k-min.jpg" );
-var bumpMaterial = new THREE.MeshBasicMaterial({
-  map: texture,
-  transparent: true,
-  opacity: 0.2
 });
 
 // creat stars geometry and material
@@ -69,12 +49,10 @@ var starMaterial = new THREE.MeshBasicMaterial({
 
 var star = new THREE.Mesh(starGeometry, starMaterial, texture);
 scene.add(star);
-var earth = new THREE.Mesh(earthGeometry, earthMaterial, texture);
-scene.add(earth);
-var clouds = new THREE.Mesh(cloudGeometry, cloudMaterial, texture);
-scene.add(clouds);
-var bump = new THREE.Mesh(bumpGeometry, bumpMaterial, texture);
-scene.add(bump);
+var mars = new THREE.Mesh(marsGeometry, marsMaterial, texture);
+scene.add(mars);
+;
+
 
 // orbit
 var orbit = new THREE.OrbitControls( camera, renderer.domElement );
@@ -82,10 +60,7 @@ var orbit = new THREE.OrbitControls( camera, renderer.domElement );
 
 
 var render = function() {
-  earth.rotation.y += .0015;
-  clouds.rotation.y += .0025;
-  clouds.rotation.z += .00125;
-  bump.rotation.y += .0015;
+  mars.rotation.y += .0015;
   renderer.render( scene, camera);
   requestAnimationFrame(render);
 
